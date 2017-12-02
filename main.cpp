@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
     int S = HIDDEN_UNITS;
     int train_set_num = TRAIN_IMAGES;
     int test_set_num = TEST_IMAGES;
-    char* path = "../../data";
+    char* path = "data";
 
     for (i = 1; i < argc; ++i) {
         if (!strcmp(argv[i], "-h")) {
