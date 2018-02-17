@@ -146,7 +146,7 @@ int main(int argc, char* argv[]) {
         hits_num = 0.0;
         for (i = 0; i < train_set_num; ++i) {
             Calculate(normalized_train_images[i], stealth, S, out, w_ij, w_jk, bias_j, bias_k);
-            hits_num += (std::distance(out, std::max_element(out, out + NUM_OF_CLASSES - 1))) == train_labels[i] ? 1.0 : 0.0;
+            hits_num += (std::distance(out, std::max_element(out, out + NUM_OF_CLASSES))) == train_labels[i] ? 1.0 : 0.0;
         }
         std::cout << std::endl << "Results: " << std::endl;
         std::cout << "Train Accuracy = " << hits_num / train_set_num << std::endl;
@@ -154,7 +154,7 @@ int main(int argc, char* argv[]) {
         hits_num = 0.0;
         for (i = 0; i < test_set_num; ++i) {
             Calculate(normalized_test_images[i], stealth, S, out, w_ij, w_jk, bias_j, bias_k);
-            hits_num += (std::distance(out, std::max_element(out, out + NUM_OF_CLASSES - 1))) == test_labels[i] ? 1.0 : 0.0;
+            hits_num += (std::distance(out, std::max_element(out, out + NUM_OF_CLASSES))) == test_labels[i] ? 1.0 : 0.0;
         }
         std::cout << "Test Accuracy = " << hits_num / test_set_num << std::endl << std::endl;
     }
